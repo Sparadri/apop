@@ -44,7 +44,6 @@ class PagesController < ApplicationController
         title: "Silent Login",
         text: "Users are yours: they don't login to our tool.",
         }
-
     ]
   end
 end

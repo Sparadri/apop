@@ -109,17 +109,32 @@
   </div>
 </div>
 
-<div class="dev-features pad-h-100">
+<div class="dev-features">
   <div class="homepage-hero-module">
     <div class="video-container">
-      <div class="filter">
+      <div class="filter pad-h-100">
         <div class="container">
+          <h1>Built for developpers, we made the integration simple!</h1>
+          <% @dev.each do |feature| %>
           <div class="row">
-            <div class="col-xs-12 col-md-4 col-md-offset-2">
-            <div class="dev-card"></div>
+            <div class="col-xs-12 col-md-4">
+              <div class="dev-card">
+                <div class="dev-picto">
+                  <i class="fa <%= feature[:fa] %>"></i>
+                </div>
+                <div class="dev-content">
 
+                <h4 class="dev-title">
+                  <%= feature[:title] %>
+                </h4>
+                <p class="dev-text">
+                  <%= feature[:text] %>
+                </p>
+                </div>
+              </div>
             </div>
           </div>
+          <% end %>
         </div>
       </div>
         <video autoplay loop class="fillWidth">
@@ -131,10 +146,66 @@
       </div>
     </div>
   </div>
-
-
-
 </div>
+
+<div class="pricing-features">
+  <div class="container">
+    <table class="table table-bordered">
+      <tr>
+        <th> FEATURES </th>
+        <th> PRICING </th>
+      </tr>
+      <tr>
+        <td> Full support of our IT team
+            <font style="font-size:14px !important;">  -- [to implement the javascript plugin] </font>
+        </td>
+        <td rowspan="4" style="font-size:40px !important;text-align:center !important;"> €49 / Month
+            <p style="font-size:12px !important;"> *hurry up, available for beta users only! </p>
+        </td>
+      </tr>
+      <tr>
+        <td> Advisory from our business team <font style="font-size:14px !important;">  -- [to set up the comment strategy] </font></td>
+      </tr>
+      <tr>
+        <td> Unlimited Advanced Analytics </td>
+      </tr>
+      <tr>
+        <td> Free access to our built-in moderation tool </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="mission-feature">
+  <p><h3>What is Feedalk? </h3></p>
+
+  <p class="text-justify">Feedalk was founded in 2015 by ecommerce & adverstising executives. The company aims to help media sites grow their community on all devices, engage their customers by making comments more relevant and ultimately monetize this audience.</p>
+
+  <p class="text-justify">Media sites often state they don't have the time & the resources to properly address the challenge of onsite comments. Very few best practices exist yet on the web although we believe a lot of value lies behind. Our clients use Feedalk because they know we are 100% focused on providing the best user experience along with strong analytics that help driving their businesses.</p>
+
+  <p class="text-justify">Our developpers relentlessly work on providing the best comment user experience to make this space even more relevant & trustful for the end user. We achieve our mission when we are able to increase the number of comments on our clients' websites, increase the relevancy of comments & drive more traffic towards the comment section.</p>
+  </div>
+
+  <div class="col-lg-8 col-lg-offset-2 top-buffer2">
+  <p> <h3> Ready to leverage your community? </h3></p>
+  <p>That's great! Give us a call or send us an email:</p>
+  </div>
+  <div class="col-lg-4 col-lg-offset-2 text-center">
+  <i class="fa fa-phone fa-3x wow bounceIn"></i>
+  <p>+33-(0)6-80-60-62-14</p>
+  </div>
+  <div class="col-lg-4 text-center">
+  <i class="fa fa-envelope-o fa-3x bounceIn" data-wow-delay=".1s"></i>
+  <p><a href="mailto:info@feedalk.com" >info@feedalk.com</a></p>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 <% content_for(:after_js) do %>
 <script>
@@ -168,7 +239,7 @@ function scaleVideoContainer() {
     var height = $(window).height() - 5;
     var unitHeight = parseInt(height) + 'px';
     $('.homepage-hero-module').css('height','90vh');
-
+    $('.dev-features .homepage-hero-module').css('height','120vh');
 }
 
 function scaleBannerVideoSize(element){

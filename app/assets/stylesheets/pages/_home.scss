@@ -107,12 +107,34 @@
     height: 150px;
     text-align: left;
     border: 1px solid #D2D0D0;
-    padding: 20px;
+    background-color: $gray-lighter;
+    padding: 20px 30px;
     border-radius: 2px;
     box-shadow: 1px 1px 2px #D8D6D6;
-    background-color: white;
     display: flex;
+    text-align: left;
     align-items: center;
+    flex-flow: row;
+    justify-content: center;
     margin: 10px 0px;
+    & * {
+      padding: 0px 10px 0px 0px;
+    }
+    .dev-content {
+      display: flex;
+      flex-direction: column;
+      h4 {
+        border-bottom: 1px dashed $blue;
+      }
+    }
+    i {
+      font-size: 50px;
+      color: $blue-darker;
+    }
   }
+    h1 {
+      color: white;
+      font-weight: 500;
+      letter-spacing: 3.2px;
+    }
 }
