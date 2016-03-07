@@ -1,0 +1,141 @@
+<div class="hp_banner">
+  <div class="homepage-hero-module">
+    <div class="video-container">
+      <div class="filter">
+        <div class="vticker-list">
+          <ul>
+              <li>Engage</li>
+              <li>Strengthen</li>
+              <li>Retain</li>
+              <li>Grow</li>
+              <li>Manage</li>
+              <li>Monetize</li>
+              <li>Analyze</li>
+              <li>Own</li>
+          </ul>
+          <span class="vticker-side">your online community<span>
+        </div>
+      </div>
+        <video autoplay loop class="fillWidth">
+          <source src="/assets/bkgd_videos/typing.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="/assets/bkgd_videos/typing.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+      <div class="poster hidden">
+        <img src="assets/bkgd_videos/typing.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="features-container">
+  <div class="features-title">
+    Grow your business with a smart comment strategy
+  </div>
+  <div class="features-items">
+    <div class="container">
+      <div class="row">
+      <div class="col-xs-12 col-sm-2 col-sm-offset-3">
+          <feature-item>
+            <div class="feature-item-picto">
+
+            </div>
+            <h3 class="feature-item-title">
+              Grow Your Community
+            </h3>
+            <p class="feature-item-description">
+              Shared content through social media plays an ever increasing role in bringing more traffic to your website. Make you best users' comments more shareable by your whole community. By increasing the quality of comments, sorting them such as most relevant comments pop up will ultimately grow your presency & increase your number of visitors.
+            </p>
+          </feature-item>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-sm-offset-3">
+          <feature-item>
+            <div class="feature-item-picto">
+
+            </div>
+            <h3 class="feature-item-title">
+              Increase Returning Customers
+            </h3>
+            <p class="feature-item-description">
+              The web is now social. User retention increases as their interactions with your content grows. Provide to your customer the best social experience & let them enrich your content. With a smart powerful comment strategy, the number of account creation & logins increases. Growing this database is key in the path to monetization.
+            </p>
+          </feature-item>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-sm-offset-3">
+          <feature-item>
+            <div class="feature-item-picto">
+
+            </div>
+            <h3 class="feature-item-title">
+              Unlock Premium Advertising*
+            </h3>
+            <p class="feature-item-description">
+              Leverage your user engagement to generate revenues & monetize your audience by unlocking sponsored comments advertisements.
+            </p>
+          </feature-item>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-sm-offset-3"></div>
+        <div class="col-xs-12 col-sm-2 col-sm-offset-3"></div>
+        <div class="col-xs-12 col-sm-2 col-sm-offset-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+<script>
+$( document ).ready(function() {
+console.log("document ready");
+/******************************** vTicker ****************************/
+$('.vticker-list').vTicker({
+  speed: 1000,
+  pause: 2000,
+  showItems: 1,
+  animation: 'fade',
+  mousePause: false,
+  height: 0,
+  direction: 'up'
+});
+
+/********************** HOMEPAGE VIDEO BACKGROUND ********************/
+    scaleVideoContainer();
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
+
+});
+
+function scaleVideoContainer() {
+
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height',unitHeight);
+
+}
+
+function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    videoWidth,
+    videoHeight;
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(videoWidth).height(videoHeight);
+        }
+
+    });
+}
+</script>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="navbar-apop">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-apop-brand" do %>
+    <%= image_tag "apop_logo_white.png" %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-apop-right hidden-xs hidden-sm">
+
+    <div class="navbar-apop-item">
+      <a href="">Why</a>
+    </div>
+    <div class="navbar-apop-item">
+      <a href="">Product</a>
+    </div>
+    <div class="navbar-apop-item">
+      <a href="">Pricing</a>
+    </div>
+    <div class="navbar-apop-item">
+      <a href="" class="btn btn-primary">Contact</a>
+    </div>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-apop-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-apop-dropdown-menu">
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
