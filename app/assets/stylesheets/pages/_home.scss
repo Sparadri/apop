@@ -1,0 +1,218 @@
+/* -------------------------------------
+ * CSS code specific to home page
+ * (margin/padding adjustments)
+ * ------------------------------------- */
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+  z-index: 100;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  background: rgba(10, 65, 88, 0.7);
+  height: 100%;
+  .hp-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gray-lighter;
+    height: 90%;
+    h1 {
+      letter-spacing: 3.3px;
+    }
+  }
+  .hp-chevron {
+    color: black;
+    text-align: center;
+    i {
+      color: $gray-lighter;
+      font-size: 40px;
+    }
+  }
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+.hp-banner {
+  height: 90vh;
+  .vticker-list {
+    ul {
+      text-align: right;
+    }
+    .vticker-side {
+      margin-left: 240px;
+    }
+  }
+}
+
+
+/*************** FEATURES **************/
+
+.features-container {
+  background-color: white;
+  color: $gray;
+  text-align: center;
+  box-shadow: 1px 1px 2px black;
+  p {
+    text-align: justify;
+  }
+  i {
+    font-size: 55px;
+    color: #F06E52;
+  }
+  .feature-item-picto {
+    padding-bottom: 20px;
+  }
+}
+.feature-item {
+  padding: 20px 0px;
+  &:hover i {
+    transform: scale(1.05);
+  }
+}
+.features-title {
+  em {
+    padding-bottom: 30px;
+    border-bottom: 4px dashed $yellow;
+  }
+  h1 {
+    letter-spacing: 2px;
+  }
+}
+.features-items {
+  padding-top: 70px;
+}
+
+
+/*********** MODERATION ***************/
+
+.moderation-features {
+  background-color: $gray-lighter;
+  text-align: center;
+  box-shadow: 1px 1px 2px black;
+  color: $gray;
+  .moderation-items {
+    padding-top: 70px;
+  }
+  .moderation-card {
+    height: 150px;
+    text-align: left;
+    border: 1px solid #D2D0D0;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #D8D6D6;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    &:hover {
+      transform: scale(1.01);
+    }
+    .moderation-content {
+      padding-left: 15px;
+    }
+  }
+  .moderation-picto {
+    padding: 0px 20px;
+  }
+  i {
+    font-size: 55px;
+    color: $orange;
+  }
+}
+.dev-features {
+  .dev-card {
+    height: 150px;
+    text-align: left;
+    border: 1px solid #D2D0D0;
+    background-color: $gray-lighter;
+    padding: 20px 30px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(10, 48, 65, 0.64);
+    display: flex;
+    text-align: left;
+    align-items: center;
+    flex-flow: row;
+    justify-content: flex-start;
+    margin: 10px 0px;
+    & * {
+      padding: 0px 10px 0px 0px;
+    }
+    &:hover {
+      transform: scale(1.01);
+    }
+    .homepage-hero-module > .video-container > .filter {
+      background: rgba(10, 65, 88, 0.4) !important; // NOT WORKING
+    }
+    .features-title {
+      color: $gray-lighter;
+    }
+    .dev-title {
+      padding-bottom: 10px;
+      letter-spacing: 0.9px;
+    }
+    .dev-picto {
+      width: 80px;
+    }
+    .dev-content {
+      display: flex;
+      flex-direction: column;
+      h4 {
+        border-bottom: 1px dashed $blue;
+      }
+    }
+    i {
+      font-size: 50px;
+      color: $orange;
+    }
+  }
+  .dev-items {
+    padding-top: 50px;
+  }
+    h1 {
+      color: white;
+      font-weight: 500;
+      letter-spacing: 3.2px;
+    }
+}
+.mission-text {
+  padding: 50px 20px 0px 0px;
+}
+
+
+
+
+.mission-feature {
+  color: $gray;
+}

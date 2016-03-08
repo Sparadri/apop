@@ -1,0 +1,32 @@
+/*************************** FONTS *******************************/
+
+// Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+$base-font: 'Roboto', sans-serif;
+$header-font: "Roboto";
+
+// Font Size, Height
+$big-size: 22px;
+$base-size: 15px;
+$small-size: 13px;
+$base-height: 1.4;
+
+
+/*************************** COLORS *******************************/
+
+// Scheme
+$brand-color: #005377;
+
+$red: #D3473C;
+$blue-darker: #052F5F;
+$blue: #469AE0;
+$yellow: #FDB631;
+$orange: #F06E52;
+$green: #32B796;
+
+// Gray scale
+$gray-darker:  lighten(#000, 13.5%); // #222
+$gray-dark:    lighten(#000, 20%);   // #333
+$gray:         lighten(#000, 33.5%); // #555
+$gray-light:   lighten(#000, 46.7%); // #777
+$gray-lighter: lighten(#000, 93.5%); // #eee

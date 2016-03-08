@@ -1,0 +1,258 @@
+<div class="hp-banner">
+  <div class="homepage-hero-module">
+    <div class="video-container">
+      <div class="filter">
+        <div class="hp-title">
+          <h1 class="vticker-list">
+            <ul>
+                <li>Engage</li>
+                <li>Strengthen</li>
+                <li>Retain</li>
+                <li>Grow</li>
+                <li>Manage</li>
+                <li>Monetize</li>
+                <li>Analyze</li>
+                <li>Own</li>
+            </ul>
+            <span class="vticker-side">your online community</span>
+          </h1>
+        </div>
+        <div class="hp-chevron pulse">
+          <a href="#features">
+            <i class="fa fa-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+        <video autoplay loop class="fillWidth">
+          <source src="/assets/bkgd_videos/typing.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="/assets/bkgd_videos/typing.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+      <div class="poster hidden">
+        <img src="assets/bkgd_videos/typing.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+
+<div class="features-container pad-h-100" id="features">
+  <div class="features-title">
+    <h1>
+      Grow your business
+    </h1>
+    <h4>
+      <em> with a smart comment strategy </em>
+    </h4>
+  </div>
+  <div class="features-items">
+    <div class="container">
+      <div class="row">
+        <% @features.each do |feature| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="feature-item">
+              <div class="feature-item-picto">
+                <i class="fa <%= feature[:fa] %>"></i>
+              </div>
+              <h4 class="feature-item-title">
+                <%= feature[:title] %>
+              </h4>
+              <p class="feature-item-description pad-20">
+                <%= feature[:content] %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="moderation-features pad-h-100" id="moderation">
+  <div class="features-title">
+    <h1>
+      Manage comments
+    </h1>
+    <h4>
+      <em> with actionnable analytics & data </em>
+    </h4>
+  </div>
+  <div class="moderation-items">
+    <div class="container">
+      <div class="row">
+        <% @moderation.each do |feature| %>
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="moderation-card">
+            <div class="moderation-picto">
+              <i class="fa <%= feature[:fa] %>"></i>
+            </div>
+            <div class="moderation-content">
+              <h3 class="moderation-card-title">
+                <%= feature[:title] %>
+              </h3>
+              <p class="moderation-card-text">
+                <%= feature[:text] %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dev-features" id="dev">
+  <div class="homepage-hero-module">
+    <div class="video-container">
+      <div class="filter pad-h-50">
+        <div class="container">
+          <div class="features-title">
+            <h1>
+              Built for developers
+            </h1>
+            <h4>
+              <em style="color: white;"> we made the integration simple </em>
+            </h4>
+          </div>
+          <div class="dev-items">
+            <% @dev.each do |feature| %>
+            <div class="row">
+              <div class="col-xs-12 col-md-5">
+                <div class="dev-card">
+                  <div class="dev-picto">
+                    <i class="fa <%= feature[:fa] %>"></i>
+                  </div>
+                  <div class="dev-content">
+
+                  <h4 class="dev-title">
+                    <%= feature[:title] %>
+                  </h4>
+                  <p class="dev-text">
+                    <%= feature[:text] %>
+                  </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+        <video autoplay loop class="fillWidth">
+          <source src="/assets/bkgd_videos/dev.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="/assets/bkgd_videos/dev.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+      <div class="poster hidden">
+        <img src="assets/bkgd_videos/dev.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="mission-feature pad-h-100" id="mission">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="features-title">
+            <h1>
+              What is ApopLab?
+            </h1>
+            <h4>
+              <em> mission statement </em>
+            </h4>
+          </div>
+          <div class="mission-text">
+            <p class="text-justify">
+              ApopLab was founded in 2015 by ecommerce & adverstising executives. The company aims to help media sites grow their community on all devices, engage their customers by making comments more relevant and ultimately monetize this audience.
+            </p>
+            <p class="text-justify">
+              Media sites often state they don't have the time & the resources to properly address the challenge of onsite comments. Very few best practices exist yet on the web although we believe a lot of value lies behind. Our clients use ApopLab because they know we are 100% focused on providing the best user experience along with strong analytics that help driving their businesses.
+            </p>
+            <p class="text-justify">
+              Our developers relentlessly work on providing the best comment user experience to make this space even more relevant & trustful for the end user. We achieve our mission when we are able to increase the number of comments on our clients' websites, increase the relevancy of comments & drive more traffic towards the comment section.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<% content_for(:after_js) do %>
+<script>
+$( document ).ready(function() {
+console.log("document ready");
+
+/****************************** Animation ****************************/
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+});
+
+
+/******************************** vTicker ****************************/
+$('.vticker-list').vTicker({
+  speed: 500,
+  pause: 3000,
+  showItems: 1,
+  animation: 'fade',
+  mousePause: false,
+  height: 0,
+  direction: 'up'
+});
+
+/********************** HOMEPAGE VIDEO BACKGROUND ********************/
+    scaleVideoContainer();
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
+
+});
+
+function scaleVideoContainer() {
+
+    var height = $(window).height() - 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height','90vh');
+    $('.dev-features .homepage-hero-module').css('height','120vh');
+}
+
+function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() - 5,
+    videoWidth,
+    videoHeight;
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(videoWidth).height(videoHeight);
+        }
+
+    });
+}
+</script>
+<% end %>

@@ -1,0 +1,34 @@
+// Your footer style
+.footer {
+  background-color: $gray-darker;
+  padding: 50px 0px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: $gray-lighter;
+  .copyright {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  a, p {
+    color: $gray-light;
+    letter-spacing: 1.5px;
+  }
+  a:hover {
+    color: $gray-lighter;
+    cursor: pointer;
+  }
+  h5 {
+    color: $gray-lighter;
+    letter-spacing: 1.5px;
+  }
+}
+.input-email {
+  max-width: 200px;
+}
+.footer-title {
+  text-decoration: underline;
+}
+
