@@ -43,13 +43,16 @@
     justify-content: center;
     color: $gray-lighter;
     height: 90%;
+    h1 {
+      letter-spacing: 3.3px;
+    }
   }
   .hp-chevron {
     color: black;
     text-align: center;
     i {
-          color: $gray-lighter;
-    font-size: 40px;
+      color: $gray-lighter;
+      font-size: 40px;
     }
   }
 }
@@ -64,8 +67,11 @@
 .hp-banner {
   height: 90vh;
   .vticker-list {
+    ul {
+      text-align: right;
+    }
     .vticker-side {
-      margin-left: 80px;
+      margin-left: 240px;
     }
   }
 }
@@ -74,11 +80,13 @@
   color: $gray;
   text-align: center;
   p {
-  text-align: justify;
+    text-align: justify;
   }
   i {
     font-size: 55px;
   }
+}
+.feature-item:hover {
 }
 .moderation-features {
   background-color: $gray-lighter;
@@ -120,6 +128,9 @@
     & * {
       padding: 0px 10px 0px 0px;
     }
+    .homepage-hero-module > .video-container > .filter {
+      background: rgba(10, 65, 88, 0.4) !important; // NOT WORKING
+    }
     .dev-content {
       display: flex;
       flex-direction: column;
@@ -137,4 +148,8 @@
       font-weight: 500;
       letter-spacing: 3.2px;
     }
+}
+.mission-text {
+  border-bottom: 1px dashed $gray-dark;
+  padding: 20px;
 }

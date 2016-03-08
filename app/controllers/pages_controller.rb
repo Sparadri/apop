@@ -45,6 +45,24 @@ class PagesController < ApplicationController
         text: "Users are yours: they don't login to our tool.",
         }
     ]
+
+    @features = [
+      {
+        fa: "fa-line-chart",
+        title: "Grow Your Community",
+        content: "Shared content through social media plays an ever increasing role in bringing more traffic to your website. Make you best users' comments more shareable by your whole community. By increasing the quality of comments, sorting them such as most relevant comments pop up will ultimately grow your presency & increase your number of visitors."
+      },
+      {
+        fa: "fa-users",
+        title: "Increase Returning Customers",
+        content: "The web is now social. User retention increases as their interactions with your content grows. Provide to your customer the best social experience & let them enrich your content. With a smart powerful comment strategy, the number of account creation & logins increases. Growing this database is key in the path to monetization."
+      },
+      {
+        fa: "fa-eur",
+        title: "Unlock Premium Advertising*",
+        content: "Leverage your user engagement to generate revenues & monetize your audience by unlocking sponsored comments advertisements."
+      }
+    ]
   end
 end
 

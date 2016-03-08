@@ -3,7 +3,7 @@
     <div class="video-container">
       <div class="filter">
         <div class="hp-title">
-          <div class="vticker-list">
+          <h1 class="vticker-list">
             <ul>
                 <li>Engage</li>
                 <li>Strengthen</li>
@@ -15,7 +15,7 @@
                 <li>Own</li>
             </ul>
             <span class="vticker-side">your online community</span>
-          </div>
+          </h1>
         </div>
         <div class="hp-chevron pulse">
           <i class="fa fa-chevron-down"></i>
@@ -31,6 +31,7 @@
     </div>
   </div>
 </div>
+
 <div class="features-container pad-h-100">
   <h1 class="features-title pad-b-50">
     Grow your business with a smart comment strategy
@@ -38,45 +39,21 @@
   <div class="features-items">
     <div class="container">
       <div class="row">
-      <div class="col-xs-12 col-sm-4">
-          <div class="feature-item">
+        <% @features.each do |feature| %>
+        <div class="feature-item">
+          <div class="col-xs-12 col-sm-4">
             <div class="feature-item-picto">
-              <i class="fa fa-line-chart"></i>
+              <i class="fa <%= feature[:fa] %>"></i>
             </div>
-            <h3 class="feature-item-title">
-              Grow Your Community
-            </h3>
+            <h4 class="feature-item-title">
+              <%= feature[:title] %>
+            </h4>
             <p class="feature-item-description pad-20">
-              Shared content through social media plays an ever increasing role in bringing more traffic to your website. Make you best users' comments more shareable by your whole community. By increasing the quality of comments, sorting them such as most relevant comments pop up will ultimately grow your presency & increase your number of visitors.
+              <%= feature[:content] %>
             </p>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="feature-item">
-            <div class="feature-item-picto">
-              <i class="fa fa-users"></i>
-            </div>
-            <h3 class="feature-item-title">
-              Increase Returning Customers
-            </h3>
-            <p class="feature-item-description pad-20">
-              The web is now social. User retention increases as their interactions with your content grows. Provide to your customer the best social experience & let them enrich your content. With a smart powerful comment strategy, the number of account creation & logins increases. Growing this database is key in the path to monetization.
-            </p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="feature-item">
-            <div class="feature-item-picto">
-                <i class="fa fa-eur"></i>
-            </div>
-            <h3 class="feature-item-title">
-              Unlock Premium Advertising*
-            </h3>
-            <p class="feature-item-description pad-20">
-              Leverage your user engagement to generate revenues & monetize your audience by unlocking sponsored comments advertisements.
-            </p>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -148,58 +125,40 @@
   </div>
 </div>
 
-<div class="pricing-features">
-  <div class="container">
-    <table class="table table-bordered">
-      <tr>
-        <th> FEATURES </th>
-        <th> PRICING </th>
-      </tr>
-      <tr>
-        <td> Full support of our IT team
-            <font style="font-size:14px !important;">  -- [to implement the javascript plugin] </font>
-        </td>
-        <td rowspan="4" style="font-size:40px !important;text-align:center !important;"> €49 / Month
-            <p style="font-size:12px !important;"> *hurry up, available for beta users only! </p>
-        </td>
-      </tr>
-      <tr>
-        <td> Advisory from our business team <font style="font-size:14px !important;">  -- [to set up the comment strategy] </font></td>
-      </tr>
-      <tr>
-        <td> Unlimited Advanced Analytics </td>
-      </tr>
-      <tr>
-        <td> Free access to our built-in moderation tool </td>
-      </tr>
-    </table>
+
+  <div class="mission-feature pad-h-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="mission-text">
+            <h3>What is ApopLab? </h3>
+            <p class="text-justify">
+              ApopLab was founded in 2015 by ecommerce & adverstising executives. The company aims to help media sites grow their community on all devices, engage their customers by making comments more relevant and ultimately monetize this audience.
+            </p>
+            <p class="text-justify">
+              Media sites often state they don't have the time & the resources to properly address the challenge of onsite comments. Very few best practices exist yet on the web although we believe a lot of value lies behind. Our clients use ApopLab because they know we are 100% focused on providing the best user experience along with strong analytics that help driving their businesses.
+            </p>
+            <p class="text-justify">
+              Our developpers relentlessly work on providing the best comment user experience to make this space even more relevant & trustful for the end user. We achieve our mission when we are able to increase the number of comments on our clients' websites, increase the relevancy of comments & drive more traffic towards the comment section.
+            </p>
+          </div>
+        </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <h3> Ready to leverage your community? </h3>
+            <div class="row">
+              <div class="col-xs-6 text-center">
+                <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                <p>+33-(0)6-80-60-62-14</p>
+              </div>
+              <div class="col-xs-6 text-center">
+                <i class="fa fa-envelope-o fa-3x bounceIn" data-wow-delay=".1s"></i>
+                <p><a href="mailto:info@apoplab.com" >info@apoplab.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
 </div>
-
-<div class="mission-feature">
-  <p><h3>What is Feedalk? </h3></p>
-
-  <p class="text-justify">Feedalk was founded in 2015 by ecommerce & adverstising executives. The company aims to help media sites grow their community on all devices, engage their customers by making comments more relevant and ultimately monetize this audience.</p>
-
-  <p class="text-justify">Media sites often state they don't have the time & the resources to properly address the challenge of onsite comments. Very few best practices exist yet on the web although we believe a lot of value lies behind. Our clients use Feedalk because they know we are 100% focused on providing the best user experience along with strong analytics that help driving their businesses.</p>
-
-  <p class="text-justify">Our developpers relentlessly work on providing the best comment user experience to make this space even more relevant & trustful for the end user. We achieve our mission when we are able to increase the number of comments on our clients' websites, increase the relevancy of comments & drive more traffic towards the comment section.</p>
-  </div>
-
-  <div class="col-lg-8 col-lg-offset-2 top-buffer2">
-  <p> <h3> Ready to leverage your community? </h3></p>
-  <p>That's great! Give us a call or send us an email:</p>
-  </div>
-  <div class="col-lg-4 col-lg-offset-2 text-center">
-  <i class="fa fa-phone fa-3x wow bounceIn"></i>
-  <p>+33-(0)6-80-60-62-14</p>
-  </div>
-  <div class="col-lg-4 text-center">
-  <i class="fa fa-envelope-o fa-3x bounceIn" data-wow-delay=".1s"></i>
-  <p><a href="mailto:info@feedalk.com" >info@feedalk.com</a></p>
-  </div>
-</div>
-
 
 
 
@@ -213,8 +172,8 @@ $( document ).ready(function() {
 console.log("document ready");
 /******************************** vTicker ****************************/
 $('.vticker-list').vTicker({
-  speed: 1000,
-  pause: 2000,
+  speed: 500,
+  pause: 3000,
   showItems: 1,
   animation: 'fade',
   mousePause: false,
