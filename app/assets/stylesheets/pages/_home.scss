@@ -75,22 +75,56 @@
     }
   }
 }
+
+
+/*************** FEATURES **************/
+
 .features-container {
   background-color: white;
   color: $gray;
   text-align: center;
+  box-shadow: 1px 1px 2px black;
   p {
     text-align: justify;
   }
   i {
     font-size: 55px;
+    color: #F06E52;
+  }
+  .feature-item-picto {
+    padding-bottom: 20px;
   }
 }
-.feature-item:hover {
+.feature-item {
+  padding: 20px 0px;
+  &:hover i {
+    transform: scale(1.05);
+  }
 }
+.features-title {
+  em {
+    padding-bottom: 30px;
+    border-bottom: 4px dashed $yellow;
+  }
+  h1 {
+    letter-spacing: 2px;
+  }
+}
+.features-items {
+  padding-top: 70px;
+}
+
+
+/*********** MODERATION ***************/
+
 .moderation-features {
   background-color: $gray-lighter;
   text-align: center;
+  box-shadow: 1px 1px 2px black;
+  color: $gray;
+  .moderation-items {
+    padding-top: 70px;
+  }
   .moderation-card {
     height: 150px;
     text-align: left;
@@ -102,12 +136,19 @@
     display: flex;
     align-items: center;
     margin: 10px 0px;
+    &:hover {
+      transform: scale(1.01);
+    }
+    .moderation-content {
+      padding-left: 15px;
+    }
   }
   .moderation-picto {
     padding: 0px 20px;
   }
   i {
     font-size: 55px;
+    color: $orange;
   }
 }
 .dev-features {
@@ -118,18 +159,31 @@
     background-color: $gray-lighter;
     padding: 20px 30px;
     border-radius: 2px;
-    box-shadow: 1px 1px 2px #D8D6D6;
+    box-shadow: 1px 1px 2px rgba(10, 48, 65, 0.64);
     display: flex;
     text-align: left;
     align-items: center;
     flex-flow: row;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 10px 0px;
     & * {
       padding: 0px 10px 0px 0px;
     }
+    &:hover {
+      transform: scale(1.01);
+    }
     .homepage-hero-module > .video-container > .filter {
       background: rgba(10, 65, 88, 0.4) !important; // NOT WORKING
+    }
+    .features-title {
+      color: $gray-lighter;
+    }
+    .dev-title {
+      padding-bottom: 10px;
+      letter-spacing: 0.9px;
+    }
+    .dev-picto {
+      width: 80px;
     }
     .dev-content {
       display: flex;
@@ -140,8 +194,11 @@
     }
     i {
       font-size: 50px;
-      color: $blue-darker;
+      color: $orange;
     }
+  }
+  .dev-items {
+    padding-top: 50px;
   }
     h1 {
       color: white;
@@ -150,6 +207,12 @@
     }
 }
 .mission-text {
-  border-bottom: 1px dashed $gray-dark;
-  padding: 20px;
+  padding: 50px 20px 0px 0px;
+}
+
+
+
+
+.mission-feature {
+  color: $gray;
 }

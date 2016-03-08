@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @client = Client.new
     @moderation = [
       {
         fa: "fa-check-square",

@@ -18,7 +18,9 @@
           </h1>
         </div>
         <div class="hp-chevron pulse">
-          <i class="fa fa-chevron-down"></i>
+          <a href="#features">
+            <i class="fa fa-chevron-down"></i>
+          </a>
         </div>
       </div>
         <video autoplay loop class="fillWidth">
@@ -32,25 +34,67 @@
   </div>
 </div>
 
-<div class="features-container pad-h-100">
-  <h1 class="features-title pad-b-50">
-    Grow your business with a smart comment strategy
-  </h1>
+<div class="divider"></div>
+
+
+<div class="features-container pad-h-100" id="features">
+  <div class="features-title">
+    <h1>
+      Grow your business
+    </h1>
+    <h4>
+      <em> with a smart comment strategy </em>
+    </h4>
+  </div>
   <div class="features-items">
     <div class="container">
       <div class="row">
         <% @features.each do |feature| %>
-        <div class="feature-item">
           <div class="col-xs-12 col-sm-4">
-            <div class="feature-item-picto">
+            <div class="feature-item">
+              <div class="feature-item-picto">
+                <i class="fa <%= feature[:fa] %>"></i>
+              </div>
+              <h4 class="feature-item-title">
+                <%= feature[:title] %>
+              </h4>
+              <p class="feature-item-description pad-20">
+                <%= feature[:content] %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="moderation-features pad-h-100" id="moderation">
+  <div class="features-title">
+    <h1>
+      Manage comments
+    </h1>
+    <h4>
+      <em> with actionnable analytics & data </em>
+    </h4>
+  </div>
+  <div class="moderation-items">
+    <div class="container">
+      <div class="row">
+        <% @moderation.each do |feature| %>
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="moderation-card">
+            <div class="moderation-picto">
               <i class="fa <%= feature[:fa] %>"></i>
             </div>
-            <h4 class="feature-item-title">
-              <%= feature[:title] %>
-            </h4>
-            <p class="feature-item-description pad-20">
-              <%= feature[:content] %>
-            </p>
+            <div class="moderation-content">
+              <h3 class="moderation-card-title">
+                <%= feature[:title] %>
+              </h3>
+              <p class="moderation-card-text">
+                <%= feature[:text] %>
+              </p>
+            </div>
           </div>
         </div>
         <% end %>
@@ -59,59 +103,41 @@
   </div>
 </div>
 
-<div class="moderation-features pad-h-100">
-  <h1 class="moderation-title pad-b-50">
-    Better manage comments with actionnable analytics & data
-  </h1>
-  <div class="container">
-    <div class="row">
-      <% @moderation.each do |feature| %>
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="moderation-card">
-          <div class="moderation-picto">
-            <i class="fa <%= feature[:fa] %>"></i>
-          </div>
-          <div class="moderation-content">
-            <h3 class="moderation-card-title">
-              <%= feature[:title] %>
-            </h3>
-            <p class="moderation-card-text">
-              <%= feature[:text] %>
-            </p>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="dev-features">
+<div class="dev-features" id="dev">
   <div class="homepage-hero-module">
     <div class="video-container">
-      <div class="filter pad-h-100">
+      <div class="filter pad-h-50">
         <div class="container">
-          <h1>Built for developpers, we made the integration simple!</h1>
-          <% @dev.each do |feature| %>
-          <div class="row">
-            <div class="col-xs-12 col-md-4">
-              <div class="dev-card">
-                <div class="dev-picto">
-                  <i class="fa <%= feature[:fa] %>"></i>
-                </div>
-                <div class="dev-content">
+          <div class="features-title">
+            <h1>
+              Built for developers
+            </h1>
+            <h4>
+              <em style="color: white;"> we made the integration simple </em>
+            </h4>
+          </div>
+          <div class="dev-items">
+            <% @dev.each do |feature| %>
+            <div class="row">
+              <div class="col-xs-12 col-md-5">
+                <div class="dev-card">
+                  <div class="dev-picto">
+                    <i class="fa <%= feature[:fa] %>"></i>
+                  </div>
+                  <div class="dev-content">
 
-                <h4 class="dev-title">
-                  <%= feature[:title] %>
-                </h4>
-                <p class="dev-text">
-                  <%= feature[:text] %>
-                </p>
+                  <h4 class="dev-title">
+                    <%= feature[:title] %>
+                  </h4>
+                  <p class="dev-text">
+                    <%= feature[:text] %>
+                  </p>
+                  </div>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
         <video autoplay loop class="fillWidth">
@@ -126,12 +152,19 @@
 </div>
 
 
-  <div class="mission-feature pad-h-100">
+  <div class="mission-feature pad-h-100" id="mission">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="features-title">
+            <h1>
+              What is ApopLab?
+            </h1>
+            <h4>
+              <em> mission statement </em>
+            </h4>
+          </div>
           <div class="mission-text">
-            <h3>What is ApopLab? </h3>
             <p class="text-justify">
               ApopLab was founded in 2015 by ecommerce & adverstising executives. The company aims to help media sites grow their community on all devices, engage their customers by making comments more relevant and ultimately monetize this audience.
             </p>
@@ -139,24 +172,12 @@
               Media sites often state they don't have the time & the resources to properly address the challenge of onsite comments. Very few best practices exist yet on the web although we believe a lot of value lies behind. Our clients use ApopLab because they know we are 100% focused on providing the best user experience along with strong analytics that help driving their businesses.
             </p>
             <p class="text-justify">
-              Our developpers relentlessly work on providing the best comment user experience to make this space even more relevant & trustful for the end user. We achieve our mission when we are able to increase the number of comments on our clients' websites, increase the relevancy of comments & drive more traffic towards the comment section.
+              Our developers relentlessly work on providing the best comment user experience to make this space even more relevant & trustful for the end user. We achieve our mission when we are able to increase the number of comments on our clients' websites, increase the relevancy of comments & drive more traffic towards the comment section.
             </p>
           </div>
         </div>
-            <div class="col-xs-12 col-md-8 col-md-offset-2">
-            <h3> Ready to leverage your community? </h3>
-            <div class="row">
-              <div class="col-xs-6 text-center">
-                <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                <p>+33-(0)6-80-60-62-14</p>
-              </div>
-              <div class="col-xs-6 text-center">
-                <i class="fa fa-envelope-o fa-3x bounceIn" data-wow-delay=".1s"></i>
-                <p><a href="mailto:info@apoplab.com" >info@apoplab.com</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -170,6 +191,16 @@
 <script>
 $( document ).ready(function() {
 console.log("document ready");
+
+/****************************** Animation ****************************/
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+});
+
+
 /******************************** vTicker ****************************/
 $('.vticker-list').vTicker({
   speed: 500,

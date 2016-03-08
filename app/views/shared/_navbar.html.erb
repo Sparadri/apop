@@ -1,4 +1,4 @@
-<div class="navbar-apop">
+<div class="navbar-apop" id="navbar">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-apop-brand" do %>
     <%= image_tag "apop_logo_white.png" %>
@@ -8,16 +8,16 @@
   <div class="navbar-apop-right hidden-xs hidden-sm">
 
     <div class="navbar-apop-item">
-      <a href="">Why</a>
+      <a href="#features">Why</a>
     </div>
     <div class="navbar-apop-item">
-      <a href="">Product</a>
+      <a href="#moderation">Product</a>
     </div>
     <div class="navbar-apop-item">
-      <a href="">Pricing</a>
+      <a href="#dev">Developers</a>
     </div>
     <div class="navbar-apop-item">
-      <a href="" class="btn btn-primary">Contact</a>
+      <a href="#mission" class="btn btn-primary">Contact</a>
     </div>
   </div>
 
@@ -33,3 +33,54 @@
     </div>
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+<script>
+  $( document ).ready(function() {
+    console.log("navbar ready");
+
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('#navbar').outerHeight();
+
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 100);
+
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('#navbar').removeClass('nav-down').addClass('nav-up');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('#navbar').removeClass('nav-up').addClass('nav-down');
+            }
+        }
+
+        lastScrollTop = st;
+    }
+
+
+
+
+  </script>
+<% end %>
