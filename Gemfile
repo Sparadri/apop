@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
 
+# development for Heroku
+ruby '2.3.0'
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
