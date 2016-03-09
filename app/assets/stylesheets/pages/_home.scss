@@ -126,7 +126,7 @@
     padding-top: 70px;
   }
   .moderation-card {
-    height: 150px;
+    min-height: 150px;
     text-align: left;
     border: 1px solid #D2D0D0;
     padding: 20px;
@@ -151,6 +151,8 @@
     color: $orange;
   }
 }
+
+/*********** DEVELOPER ***************/
 .dev-features {
   .dev-card {
     height: 150px;
@@ -215,4 +217,34 @@
 
 .mission-feature {
   color: $gray;
+}
+
+
+
+
+
+/**************** MEDIA QUERY ********************/
+
+
+@media screen and (max-width: 450px) {
+  .moderation-card {
+    flex-direction: column;
+    .moderation-content {
+      padding-left: 0px !important;
+    }
+    p {
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+  .hp-banner {
+    h1 {
+      font-size: 16px;
+    }
+    .vticker-side {
+          margin-left: 121px;
+    }
+  }
 }
