@@ -155,7 +155,7 @@
 /*********** DEVELOPER ***************/
 .dev-features {
   .dev-card {
-    height: 150px;
+    min-height: 150px;
     text-align: left;
     border: 1px solid #D2D0D0;
     background-color: $gray-lighter;
@@ -243,8 +243,8 @@
     h1 {
       font-size: 16px;
     }
-    .vticker-side {
-          margin-left: 121px;
+    .vticker-list .vticker-side {
+      margin-left: 121px !important;
     }
   }
 }

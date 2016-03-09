@@ -108,35 +108,37 @@
     <div class="video-container">
       <div class="filter pad-h-50">
         <div class="container">
-          <div class="features-title">
-            <h1>
-              Built for developers
-            </h1>
-            <h4>
-              <em style="color: white;"> we made the integration simple </em>
-            </h4>
-          </div>
-          <div class="dev-items">
-            <% @dev.each do |feature| %>
-            <div class="row">
-              <div class="col-xs-12 col-md-5">
-                <div class="dev-card">
-                  <div class="dev-picto">
-                    <i class="fa <%= feature[:fa] %>"></i>
-                  </div>
-                  <div class="dev-content">
+          <div class="dev-height">
+            <div class="features-title">
+              <h1>
+                Built for developers
+              </h1>
+              <h4>
+                <em style="color: white;"> we made the integration simple </em>
+              </h4>
+            </div>
+            <div class="dev-items">
+              <% @dev.each do |feature| %>
+              <div class="row">
+                <div class="col-xs-12 col-md-5">
+                  <div class="dev-card">
+                    <div class="dev-picto">
+                      <i class="fa <%= feature[:fa] %>"></i>
+                    </div>
+                    <div class="dev-content">
 
-                  <h4 class="dev-title">
-                    <%= feature[:title] %>
-                  </h4>
-                  <p class="dev-text">
-                    <%= feature[:text] %>
-                  </p>
+                    <h4 class="dev-title">
+                      <%= feature[:title] %>
+                    </h4>
+                    <p class="dev-text">
+                      <%= feature[:text] %>
+                    </p>
+                    </div>
                   </div>
                 </div>
               </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
         </div>
       </div>
@@ -229,7 +231,8 @@ function scaleVideoContainer() {
     var height = $(window).height() - 5;
     var unitHeight = parseInt(height) + 'px';
     $('.homepage-hero-module').css('height','90vh');
-    $('.dev-features .homepage-hero-module').css('height','120vh');
+    var devHeight = $('.dev-height').height() + 150 + 'px'
+    $('.dev-features .homepage-hero-module').css('height', devHeight);
 }
 
 function scaleBannerVideoSize(element){
