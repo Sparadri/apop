@@ -248,3 +248,35 @@
     }
   }
 }
+
+
+.iframe {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    box-shadow: -4px -4px 10px 0px #072D3D;
+    border-left: 1px solid #072D3D;
+    z-index: 1000;
+}
+
+.close-module {
+    position: absolute;
+    display: flex;
+    flex-flow: row;
+    color: #898998;
+    font-size: 12px;
+    font-weight: 800;
+    top: 37px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    padding: 4px 0px;
+    left: -19px;
+    border-radius: 3px 0px 0px 3px;
+    &:hover {
+      color: #61616D;
+    }
+    * {
+      padding: 0px 5px;
+      align-self: center;
+    }
+}

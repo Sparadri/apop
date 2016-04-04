@@ -36,6 +36,18 @@
 </div>
 
 <div class="divider"></div>
+<div class="product-showcase">
+  <iframe width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="divider"></div>
+<div class="iframe hidden">
+  <div class="close-module">
+    <i class="fa fa-times"></i>
+  </div>
+  <iframe width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="divider"></div>
 
 
 <div class="features-container pad-h-100" id="features">
@@ -258,5 +270,26 @@ function scaleBannerVideoSize(element){
 
     });
 }
+
+$('#navbar').click(function(){
+    $('.iframe').removeClass("hidden slideRight").addClass("slideLeft");
+    return false;
+});
+
+$('.close-module').click(function(){
+    $('.iframe').addClass("slideRight").removeClass("slideLeft");
+    setTimeout(function(){
+      $('.iframe').addClass("hidden");
+    }, 900);
+    return false;
+});
+
+var iFramePosition = $('.iframe').position().top + 19
+$(window).scroll(function(){
+  if($(window).scrollTop() > iFramePosition){
+  } else {
+  }
+});
+
 </script>
 <% end %>
