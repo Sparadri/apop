@@ -36,10 +36,14 @@
 </div>
 
 <div class="divider"></div>
+<div class="product-showcase">
+  <iframe width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="divider"></div>
 <div class="iframe hidden">
   <div class="close-module">
-    <div>close</div>
-    <i class="fa fa-arrow-right"></i>
+    <i class="fa fa-times"></i>
   </div>
   <iframe width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -280,12 +284,10 @@ $('.close-module').click(function(){
     return false;
 });
 
-var iFramePosition = $('.iframe').position().top
+var iFramePosition = $('.iframe').position().top + 19
 $(window).scroll(function(){
   if($(window).scrollTop() > iFramePosition){
-    $('.close-module').css('position','fixed').css('top','0');
   } else {
-    $('.close-module').css('position','absolute');
   }
 });
 

@@ -252,7 +252,7 @@
 
 .iframe {
     position: absolute;
-    top: 71px;
+    top: 0px;
     right: 0;
     box-shadow: -4px -4px 10px 0px #072D3D;
     border-left: 1px solid #072D3D;
@@ -263,16 +263,17 @@
     position: absolute;
     display: flex;
     flex-flow: row;
-    color: #FFFFFF;
-    width: 80px;
-    margin-top: 1px;
+    color: #898998;
+    font-size: 12px;
     font-weight: 800;
+    top: 37px;
     cursor: pointer;
-    border-bottom: 1px solid black;
-    background-color: rgba(185, 190, 195, 0.82);
-    padding: 7px 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 4px 0px;
+    left: -19px;
+    border-radius: 3px 0px 0px 3px;
     &:hover {
-      background-color: rgba(185, 190, 195, 0.90);
+      color: #61616D;
     }
     * {
       padding: 0px 5px;
