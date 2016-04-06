@@ -3,19 +3,193 @@ class PagesController < ApplicationController
     @client = Client.new
     @moderation = [
       {
+        id: "cust-moderation",
         fa: "fa-check-square",
-        title: "Make Moderation Intuitive",
-        text: "Easily detect & moderate spams or bad comments: with our moderation algorithm, fastly detect them."
+        title: "Make Moderation More Automated",
+        text: "Decide everything on users, comments & replies."
       },
       {
+        id: "cust-design",
         fa: "fa-pencil-square",
         title: "Customize Comment Templates",
-        text: "Simply customize the layout of our pluggin so it best serves your strategy & the design of your website."
+        text: "Easily customize the layout so it best fits your design."
       },
       {
+        id: "cust-perf",
         fa: "fa-table",
         title: "Manage Discussions Based on Data",
         text: "Review Performances with an intuitive performance dashboard. Make data driven decisions."
+      }
+    ]
+
+    @design_settings = [
+      {
+        category: "design",
+        items:
+        [{
+          topic: "design",
+          title: "Color scheme",
+          goal: "",
+          dropdown: ["gray", "blue", "black", "red"],
+          placeholder: "gray",
+          separator: "keep base colors"
+        },
+        {
+          topic: "design",
+          title: "Base font size",
+          goal: "",
+          dropdown: ["12px", "13px", "14px", "15px", "16px"],
+          placeholder: "14px",
+          separator: "keep base font size"
+        }]
+      }
+    ]
+
+    @moderation_settings = [
+      {
+        category: "users",
+        items:
+        [{
+          topic: "users",
+          title: "The following users have the right to comment",
+          goal: "Adjust content strategy with comments rights",
+          dropdown: ["subscribed users", "logged in users", "no users"],
+          placeholder: "subscribed users",
+          separator: "all users"
+        },
+        {
+          topic: "users",
+          title: "Users are allowed to comment if they have signed in since",
+          goal: "",
+          dropdown: ["1 day", "1 week"],
+          placeholder: "1 day",
+          separator: "immediate"
+        },
+        {
+          topic: "users",
+          title: "Users' comments manually moderated",
+          goal: "",
+          dropdown: ["all comments", "only from not verified users"],
+          placeholder: "not verified users",
+          separator: "none"
+        },
+        {
+          topic: "users",
+          title: "Type of content shareable",
+          goal: "",
+          dropdown: ["video & text", "picture & text"],
+          placeholder: "video & picture",
+          separator: "only text"
+        }]
+      },
+      {
+        category: "comments",
+        items:
+        [{
+          topic: "comments",
+          title: "Max number of comments per person & per day",
+          goal: "",
+          dropdown: ["1 comments", "2 comments", "3 comments", "4 comments", "5 comments"],
+          placeholder: "5 comments",
+          separator: "no limit"
+        },
+        {
+          topic: "comments",
+          title: "Max number of comments per person & per article",
+          goal: "",
+          dropdown: ["1", "2", "3", "4", "5", "6"],
+          placeholder: "1 comment",
+          separator: "no limit"
+        },
+        {
+          topic: "comments",
+          title: "User can share comments on",
+          goal: "",
+          dropdown: ["facebook", "linkedIn", "twitter", "by email"],
+          placeholder: "all social networks",
+          separator: "all social networks"
+        },
+        {
+          topic: "comments",
+          title: "Form - min number of characters",
+          goal: "",
+          dropdown: ["1 character", "5 characters", "10 characters", "20 characters"],
+          placeholder: "10 characters",
+          separator: "no minimum"
+        },
+        {
+          topic: "comments",
+          title: "Form - max number of characters",
+          goal: "",
+          dropdown: ["50 characters", "100 characters", "500 characters", "1,000 characters"],
+          placeholder: "100 characters",
+          separator: "no maximum"
+        }]
+      },
+      {
+        category: "Replies",
+        items:
+        [{
+          topic: "replies",
+          title: "Maximum number of times a user can answer a comment",
+          goal: "Avoid endless discussions",
+          dropdown: ["0", "2", "3"],
+          placeholder: "2 answers max per user",
+          separator: "no limit"
+        },
+        {
+          topic: "replies",
+          title: "The following users have the right to answer",
+          goal: "",
+          dropdown: ["no answers allowed", "logged in users", "subscribed users", "verified users", "subscribed & verified"],
+          placeholder: "verified users",
+          separator: "all users"
+
+        },
+        {
+          topic: "replies",
+          title: "Max number of comments shown by default under each comment",
+          goal: "Make sure that only the best content is shown to readers",
+          dropdown: ["1 reply", "2 replies", "3 replies", "4 replies", "5 replies"],
+          placeholder: "2 replies",
+          separator: "show all replies"
+        },
+        {
+          topic: "replies",
+          title: "Form - min number of characters",
+          goal: "",
+          dropdown: ["1 character", "5 characters", "10 characters", "20 characters"],
+          placeholder: "10 characters",
+          separator: "no minimum"
+        },
+        {
+          topic: "replies",
+          title: "Form - max number of characters",
+          goal: "",
+          dropdown: ["50 characters", "100 characters", "500 characters", "1,000 characters"],
+          placeholder: "100 characters",
+          separator: "no maximum"
+        }]
+      },
+      {
+        category: "other",
+        items:
+        [{
+          topic: "Algorithm",
+          title: "Adjust the weight of each criteria in the algorithm",
+          goal: "",
+          dropdown: [],
+          placeholder: "pending dev",
+          separator: ""
+        },
+        {
+          topic: "Social Interactions",
+          title: "Max number of social interactions before forced login:",
+          goal: "Increase the ability to spot bad content",
+          dropdown: ["1 interaction", "2 interactions", "3 interactions", "4 interactions", "5 interactions", "6 interactions"],
+          placeholder: "4 interactions",
+          separator: "always allow interactions"
+        }]
       }
     ]
 

@@ -1,0 +1,26 @@
+  <div class="settings-table"  id="show-<%= feature %>">
+  <% settings.each do |setting| %>
+    <div class="setting-category">
+      <%= setting[:category] %>
+    </div>
+    <% setting[:items].each do |item| %>
+      <div class="settings-item">
+        <div class="settings-title">
+          <%= item[:title] %>
+        </div>
+        <div class="btn-group">
+          <button style="min-width: 240px;" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span> <%= item[:placeholder] %></span> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <% item[:dropdown].each do |dropdown| %>
+              <li><a href="#"><%= dropdown %></a></li>
+            <% end %>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><%=item[:separator]%></a></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
