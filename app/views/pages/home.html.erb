@@ -17,6 +17,9 @@
             </ul>
             <span class="vticker-side">your online community</span>
           </h1>
+          <div class="cta-product btn btn-info">
+            view product demo
+          </div>
         </div>
         <div class="hp-chevron pulse">
           <a href="#features">
@@ -48,16 +51,16 @@
   <div class="product-iframe">
     <iframe id="product-showcase" width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
   </div>
-</div>
+</div> -->
 
 <div class="divider"></div>
-<div class="iframe hidden">
-  <div class="close-module">
-    <i class="fa fa-times"></i>
+  <div class="iframe hidden">
+    <div class="close-module">
+      <i class="fa fa-times"></i>
+    </div>
+    <iframe width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
   </div>
-  <iframe width="550px" height="3000px" src="https://apopapp.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
-</div>
-<div class="divider"></div> -->
+<div class="divider"></div>
 
 
 <div class="features-container pad-h-100" id="features">
@@ -124,6 +127,8 @@
               <%= render partial: "settings", locals: {settings: @moderation_settings, feature: feature[:id]} %>
             <% elsif feature[:id] == "cust-design" %>
               <%= render partial: "settings", locals: {settings: @design_settings, feature: feature[:id]} %>
+            <% elsif feature[:id] == "cust-perf" %>
+              <%= render partial: "charts", locals: {feature: feature[:id]} %>
             <% end %>
             </div>
           </div>
@@ -214,71 +219,112 @@
   </div>
 </div>
 
-<canvas id="line1" width="400" height="200"></canvas>
-
-<canvas id="bar1" width="400" height="200"></canvas>
-
-
-
-
 <% content_for(:after_js) do %>
 <script>
 $( document ).ready(function() {
 console.log("document ready");
 /****************************** chart.js ****************************/
-var line1 = document.getElementById("line1").getContext("2d");
-var options = {}
-var line1Data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
-};
-var myLineChart = new Chart(line1).Line(line1Data, options);
+function buildCharts() {
+  var line1 = document.getElementById("line1").getContext("2d");
+  var line1Data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+          {
+              label: "Number of Comments",
+              fillColor: "rgba(220,220,220,0.2)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,0)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(220,220,220,1)",
+              data: [100, 95, 102, 104, 110, 100, 105]
+          },
+          {
+              label: "Number of Social Interactions",
+              fillColor: "rgba(151,187,205,0)",
+              strokeColor: "rgba(151,187,205,0)",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(151,187,205,1)",
+              data: [100, 95, 102, 104, 110, 112, 125]
+          },
+          {
+              label: "Number of Shares",
+              fillColor: "rgba(205,151,160,0)",
+              strokeColor: "rgba(205,151,160,0)",
+              pointColor: "rgba(205,151,160,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgb(205,151,160,1)",
+              data: [100, 102, 102, 101, 105, 109, 109]
+          }
+      ]
+  };
+  var options = {
+    scaleShowHorizontalLines: false,
+    scaleFontFamily: "'Roboto'"
+  }
+  var myLineChart = new Chart(line1).Line(line1Data, options);
 
 
-var bar1 = document.getElementById("bar1").getContext("2d");
-var bar1Data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,0.8)",
-            highlightFill: "rgba(151,187,205,0.75)",
-            highlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
-};
-var myBarChart = new Chart(bar1).Bar(bar1Data, options);
+  var bar1 = document.getElementById("bar1").getContext("2d");
+  var bar1Data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+          {
+              label: "Comment Length (# chars)",
+              fillColor: "rgba(220,220,220,0.5)",
+              strokeColor: "rgba(220,220,220,0.8)",
+              highlightFill: "rgba(220,220,220,0.75)",
+              highlightStroke: "rgba(220,220,220,1)",
+              data: [100, 95, 120, 130, 125, 127, 135]
+          },
+          {
+              label: "Number rich content shared",
+              fillColor: "rgba(151,187,205,0.5)",
+              strokeColor: "rgba(151,187,205,0.8)",
+              highlightFill: "rgba(151,187,205,0.75)",
+              highlightStroke: "rgba(151,187,205,1)",
+              data: [100, 110, 102, 103, 110, 100, 120]
+          },
+          {
+              label: "Number of links shared",
+              fillColor: "rgba(205,151,160,0.5)",
+              strokeColor: "rgba(205,151,160,0.8)",
+              highlightFill: "rgba(205,151,160,0.75)",
+              highlightStroke: "rgba(205,151,160,1)",
+              data: [100, 120, 115, 92, 120, 160, 140]
+          }
+      ]
+  };
+  var myBarChart = new Chart(bar1).Bar(bar1Data, options);
+
+
+
+  var doughnut1 = document.getElementById("doughnut1").getContext("2d");
+  var doughnut1Data = [
+      {
+          value: 60,
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Desktop"
+      },
+      {
+          value: 10,
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "Mobile Site"
+      },
+      {
+          value: 30,
+          color: "#FDB45C",
+          highlight: "#FFC870",
+          label: "Mobile App"
+      }
+  ]
+  var myDoughnutChart = new Chart(doughnut1).Doughnut(doughnut1Data,options);
+}
 
 /****************************** Animation ****************************/
 $('a').click(function(){
@@ -292,6 +338,7 @@ $('a').click(function(){
 
   var custModeration = 0
   var custDesign     = 0
+  var custPerf       = 0
 
   $("#cust-moderation").click(function(){
     var $this = $(this);
@@ -317,6 +364,18 @@ $('a').click(function(){
     };
   });
 
+  $("#cust-perf").click(function(){
+    var $this = $(this);
+    var id = "#show-" + $this.attr("id");
+    if (custPerf == 0) {
+      $(id).css('display', "flex");
+      custPerf += 1;
+      buildCharts();
+    } else {
+      $(id).css('display', "none");
+      custPerf -= 1;
+    };
+  });
 
 /******************************** vTicker ****************************/
 $('.vticker-list').vTicker({
@@ -390,25 +449,25 @@ function scaleBannerVideoSize(element){
     });
 };
 
-// $('#navbar').click(function(){
-//     $('.iframe').removeClass("hidden slideRight").addClass("slideLeft");
-//     return false;
-// });
+$('.cta-product').click(function(){
+    $('.iframe').removeClass("hidden slideRight").addClass("slideLeft");
+    return false;
+});
 
-// $('.close-module').click(function(){
-//     $('.iframe').addClass("slideRight").removeClass("slideLeft");
-//     setTimeout(function(){
-//       $('.iframe').addClass("hidden");
-//     }, 900);
-//     return false;
-// });
+$('.close-module').click(function(){
+    $('.iframe').addClass("slideRight").removeClass("slideLeft");
+    setTimeout(function(){
+      $('.iframe').addClass("hidden");
+    }, 900);
+    return false;
+});
 
-// var iFramePosition = $('.iframe').position().top + 19
-// $(window).scroll(function(){
-//   if($(window).scrollTop() > iFramePosition){
-//   } else {
-//   }
-// });
+var iFramePosition = $('.iframe').position().top + 19
+$(window).scroll(function(){
+  if($(window).scrollTop() > iFramePosition){
+  } else {
+  }
+});
 
 
 
