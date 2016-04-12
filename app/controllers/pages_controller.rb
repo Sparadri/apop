@@ -25,7 +25,7 @@ class PagesController < ApplicationController
         picture: 'demo_ads.png',
         fa: 'fa-compress',
         title: 'Grow monetization with native advertising',
-        text: "In-flow advertising have the best performances. We partner with advertising agencies to help you monetize this section."
+        text: "In-flow sponsored ads have the best performances. We partner with advertising agencies to help you monetize this section."
       }
     ]
 
@@ -252,7 +252,7 @@ class PagesController < ApplicationController
       },
       {
         fa: "fa-users",
-        title: "Increase Returning Customers",
+        title: "Increase Retention",
         content: "The web is now social. User retention increases as their interactions with your content grows. Provide to your customer the best social experience & let them enrich your content. With a smart powerful comment strategy, the number of account creation & logins increases. Growing this database is key in the path to monetization."
       },
       {
