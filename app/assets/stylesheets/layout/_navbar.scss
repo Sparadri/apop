@@ -4,7 +4,7 @@
   background: $brand-color;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: 60px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +42,16 @@
     border-bottom: 1px solid $brand-color;
     transition: border-bottom 0.3s ease; // not working
     transition: color 0.3s ease;
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  a:active {
+    text-decoration: none !important;
+  }
+  a:visited {
+    text-decoration: none !important;
   }
   a:hover {
     color: white;

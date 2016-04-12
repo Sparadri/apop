@@ -1,6 +1,34 @@
 class PagesController < ApplicationController
   def home
     @client = Client.new
+
+    @demo_product = [
+      {
+        picture: 'demo_create.png',
+        fa: 'fa-plus',
+        title: 'Enable your users to share greater content',
+        text: "We bring all the best practices from Facebook, Twitter & Medium to your website."
+      },
+      {
+        picture: 'demo_dash.png',
+        fa: 'fa-users',
+        title: 'Allow users to navigate through discussions',
+        text: "We help increasing retention by enabling your users to easily navigate among comments."
+      },
+      {
+        picture: 'demo_discuss.png',
+        fa: 'fa-sort-numeric-desc',
+        title: 'Always display first most relevant comments',
+        text: "We've built a strong algorithm to sort comments, based on user history, like/dislike ratio & type of content shared."
+      },
+      {
+        picture: 'demo_ads.png',
+        fa: 'fa-compress',
+        title: 'Grow monetization with native advertising',
+        text: "In-flow advertising have the best performances. We partner with advertising agencies to help you monetize this section."
+      }
+    ]
+
     @moderation = [
       {
         id: "cust-moderation",
@@ -196,18 +224,13 @@ class PagesController < ApplicationController
     @dev = [
       {
         fa: "fa-code",
-        title: "Code Embedded",
-        text: "Copy & paste our snippet to your website and share your data feed.",
-        },
-      {
-        fa: "fa-home",
-        title: "Customized Architecture",
-        text: "Our API adapts your framework.",
+        title: "Code Embedded & Customized Architecture",
+        text: "Copy & paste our snippet to your website, decide on custom design & share your data feed.",
         },
       {
         fa: "fa-tablet",
         title: "All Devices Supported",
-        text: "We provide an outstanding cross-device UX.",
+        text: "We provide an outstanding cross-device user experience.",
         },
       {
         fa: "fa-key",
@@ -217,7 +240,7 @@ class PagesController < ApplicationController
       {
         fa: "fa-user",
         title: "Silent Login",
-        text: "Users are yours: they don't login to our tool.",
+        text: "Users are yours: they don't login to our tool. You only share an anonymized data feed.",
         }
     ]
 
