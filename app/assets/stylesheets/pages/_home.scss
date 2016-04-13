@@ -129,6 +129,9 @@
   }
   .moderation-items {
     padding-top: 70px;
+    .dropdown-menu {
+      right: 0px;
+    }
   }
   .moderation-card {
     cursor: pointer;

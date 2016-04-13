@@ -64,6 +64,14 @@ class PagesController < ApplicationController
         },
         {
           topic: "design",
+          title: "Base Font Family",
+          goal: "",
+          dropdown: ["Georgio", "Arial", "Helvetica", "Roboto", "Palatino"],
+          placeholder: "Palatino",
+          separator: "Times New Roman"
+        },
+        {
+          topic: "design",
           title: "Base font size",
           goal: "",
           dropdown: ["12px", "13px", "14px", "15px", "16px"],
