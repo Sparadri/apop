@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'clients/create'
 
   get 'pages/home'
-
+  get 'pages/in_situe', to: 'pages#in_situe', as: :in_situe
   root to: 'pages#home'
   resources :clients, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.

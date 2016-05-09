@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
     @client = Client.new
+    @skip_navbar = false
+    @skip_footer = false
 
     @demo_product = [
       {
@@ -269,6 +271,12 @@ class PagesController < ApplicationController
         content: "Leverage your user engagement to generate revenues & monetize your audience by unlocking sponsored comments advertisements."
       }
     ]
+  end
+
+  def in_situe
+    @client = Client.new
+    @skip_navbar = true
+    @skip_footer = true
   end
 end
 

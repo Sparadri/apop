@@ -3,6 +3,22 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+.in-situe {
+  width: 41px;
+  height: 30px;
+  z-index: 10;
+  position: absolute;
+  top: 758px;
+  cursor: pointer;
+  left: 765px;
+  border: 1px solid #E0E0E0;
+  border-radius: 3px;
+}
+.bottom-frame {
+  position: absolute;
+  top: 6698px;
+  left: 295px;
+}
 .homepage-hero-module {
     border-right: none;
     border-left: none;
